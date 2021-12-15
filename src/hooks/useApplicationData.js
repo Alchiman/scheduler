@@ -32,7 +32,6 @@ export default function useApplicationData(props) {
   }, []);
 
   function updateSpots(state, appointments) {
-    debugger;
     const days = state.days.map((day) => {
       if (day.name === state.day) {
         day.spots = day.appointments.filter(
