@@ -1,23 +1,27 @@
-# Interview Scheduler
-
 ## Setup
 
-Install dependencies with `npm install`.
+Install dependencies with npm i.
 
-## Running Webpack Development Server
+### Running Webpack Development Server
 
-```sh
 npm start
-```
 
-## Running Jest Test Framework
+### Running Jest Test Framework
 
-```sh
 npm test
-```
 
-## Running Storybook Visual Testbed
+### Running Storybook Visual Testbed
 
-```sh
 npm run storybook
-```
+
+### Running Cypress Tests
+
+npm run cypress
+
+"dependencies": {
+"axios": "^0.24.0",
+"classnames": "^2.2.6",
+"normalize.css": "^8.0.1",
+"react": "^16.9.0",
+"react-dom": "^16.9.0",
+"react-scripts": "3.0.0"

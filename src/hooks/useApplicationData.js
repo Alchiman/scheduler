@@ -26,7 +26,6 @@ export default function useApplicationData(props) {
           appointments: appointmentsResponse,
           interviewers: interviewersResponse,
         }));
-        console.log(daysResponse, appointmentsResponse, interviewersResponse);
       }
     );
   }, []);
