@@ -1,13 +1,21 @@
-describe("Navigation", () => {
-  it("should visit root", () => {
+describe("Appointments", () => {
+  beforeEach(() => {
+    cy.request("GET", "/api/debug/reset");
+
     cy.visit("/");
+
+    cy.contains("Monday");
   });
 
-  it("should navigate to Tuesday", () => {
-    cy.visit("/");
+  it("should book an interview", () => {
+    cy.get("[alt=Add]").first().click();
 
-    cy.contains("[data-testid=day]", "Tuesday")
-      .click()
-      .should("have.class", "day-list__item--selected");
+    cy.get("[data-testid=student-name-input]").type("Lydia Miller-Jones");
+    cy.get('[alt="Sylvia Palmer"]').click();
+
+    cy.contains("Save").click();
+
+    cy.contains(".appointment__card--show", "Lydia Miller-Jones");
+    cy.contains(".appointment__card--show", "Sylvia Palmer");
   });
 });
