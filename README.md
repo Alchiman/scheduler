@@ -1,27 +1,100 @@
-## Setup
+# Interview Scheduler
 
-Install dependencies with npm i.
+## Project Description
 
-### Running Webpack Development Server
+Interview Scheduler is a SPA (Single Page Application) for tracking students interviews built with the latest tools and techniques for optimized user experience.
+The App utilizes React built-in and custom hooks and allows users to add, edit and delete appointments in real time.
+Data is persisted by the API server using a PostgreSQL database. The client application communicates with an API server over HTTP, using the JSON format.
+For quality assurance, the project follows best practices of TDD (Test Driven Development), where individual Components are tested in isolation as well as End-to-End testing is performed.
 
+## Project Features
+
+- Appointment days (Monday to Friday) are displayed and colour-coordinated depending on availability
+- The days show the number of slots available as a snapshot of the week
+- A user can switch between days and see detailed information
+- Booked and available slots are clearly differentiated
+- A user can book interviews by typing in a student name and clicking on an interviewer from a list of interviewers
+- A user can change the details of an existing interview by pressing the edit icon
+- A user can cancel an existing interview, a pop-up message will ask to confirm the action before permanently deleting an interview
+- Days display currently remaining spots and capture updates after each modification
+
+### Daily view
+
+!['booked-slots-available'](./docs/booked-slots-available.png)
+_By selecting a weekday on the left panel, a user can see booked appointments and available slots for each day._
+
+### New appointment booking
+
+!['book-new-apt'](./docs/book-new-apt.png)
+_A user can add interviews to available slots by typing a student name and adding interviewer from the list (an error message will be shown if a student name field is left blank)._
+
+### Interview cancelation
+
+!['cancel-apt-confirm-delete'](./docs/cancel-apt-confirm-delete.png)
+_A user can cancel an existing appointment by pressing the delete icon and interacting with a warning message by pressing a confirm button._
+
+**Note** : _For full functionality both must run concurrently: the client and the API server applications (see database\* setup below)._
+
+## Installation
+
+```
+npm install
+```
+
+## Running Webpack Development Server
+
+```
 npm start
+```
 
-### Running Jest Test Framework
+## Running Jest Test Framework
 
+```
 npm test
+```
 
-### Running Storybook Visual Testbed
+## Running Storybook Visual Testbed
 
+```
 npm run storybook
+```
 
-### Running Cypress Tests
+## API server/\*Database Setup
 
-npm run cypress
+For full functionality both must run concurrently: the client and the API server applications.
 
-"dependencies": {
-"axios": "^0.24.0",
-"classnames": "^2.2.6",
-"normalize.css": "^8.0.1",
-"react": "^16.9.0",
-"react-dom": "^16.9.0",
-"react-scripts": "3.0.0"
+- Start by forking and cloning the scheduler-api server [here](https://github.com/lighthouse-labs/scheduler-api)
+- Follow the steps outlined in README to install and setup the database
+- Fork and clone this repo
+- Navigate to the root directory and install dependencies with `npm install`
+- Once you have the database setup and the scheduler-api server running, run the following command from the root directory of the project `npm start`
+
+## Project Stack
+
+**Front-End:** React, Axios, JSX, HTML, SASS, JavaScript
+
+**Back-End:** Express, Node.js, PostgreSQL
+
+**Testing:** Storybook, Webpack Dev Server, Jest, Testing Library and Cypress
+
+## Dependencies
+
+- Axios
+- Classnames
+- Normalize.css
+- React
+- React-dom
+- React-scripts
+- Babel/core
+- Storybook/addon-actions
+- Storybook/addon-backgrounds
+- Storybook/addon-links
+- Storybook/addons
+- Storybook/react
+- Testing-library/jest-dom
+- Testing-library/react
+- Testing-library/react-hooks
+- Babel-loader
+- Node-sass
+- Prop-types
+- React-test-renderer
