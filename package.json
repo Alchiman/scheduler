@@ -11,6 +11,7 @@
     "react-dom": "^16.9.0",
     "react-scripts": "3.0.0"
   },
+  "proxy": "http://localhost:8001",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -53,5 +54,16 @@
       "<rootDir>/.git/"
     ]
   },
-  "proxy": "http://localhost:8001"
+  "description": "## Setup",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuzhakova/scheduler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alchiman/scheduler/issues"
+  },
+  "homepage": "https://github.com/Alchiman/scheduler/blob/master/README.md"
 }
